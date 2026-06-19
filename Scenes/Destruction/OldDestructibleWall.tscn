@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dfgwoknpaieht"]
+
+[ext_resource type="Material" uid="uid://c4jxk1owsgcng" path="res://Materials/Wall.tres" id="1_1dh3y"]
+[ext_resource type="ArrayMesh" uid="uid://bg2nhpoj4shwa" path="res://Meshes/Destruction/DestructableSurfaceWall.res" id="2_37vdg"]
+[ext_resource type="Script" uid="uid://dw6xcayjubgke" path="res://Scripts/Destructible.cs" id="3_o6ya4"]
+[ext_resource type="PackedScene" uid="uid://b8o48xanaef80" path="res://Scenes/Destruction/CollapsableBeamPlaceholder.tscn" id="4_io2o7"]
+
+[node name="DestructibleWall" type="Node3D" unique_id=155879927]
+
+[node name="Wall" type="CSGMesh3D" parent="." unique_id=2038983504]
+material_override = ExtResource("1_1dh3y")
+gi_mode = 0
+calculate_tangents = false
+use_collision = true
+mesh = ExtResource("2_37vdg")
+script = ExtResource("3_o6ya4")
+DestScalMult = 1.5
+
+[node name="CollapsableBeamPlaceholder1" parent="." unique_id=381329922 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.6, 0.75, 0)
+
+[node name="CollapsableBeamPlaceholder2" parent="." unique_id=1640697520 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.6, -0.25, 0)
+
+[node name="CollapsableBeamPlaceholder3" parent="." unique_id=345421066 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.6, -1.25, 0)
+
+[node name="CollapsableBeamPlaceholder4" parent="." unique_id=1186388834 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.8, 1.25, 0)
+
+[node name="CollapsableBeamPlaceholder5" parent="." unique_id=1733928824 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.8, 0.25, 0)
+
+[node name="CollapsableBeamPlaceholder6" parent="." unique_id=1562663273 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.8, -0.75, 0)
+
+[node name="CollapsableBeamPlaceholder7" parent="." unique_id=535619847 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="CollapsableBeamPlaceholder8" parent="." unique_id=1412918996 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="CollapsableBeamPlaceholder9" parent="." unique_id=897529673 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, -1.25, 0)
+
+[node name="CollapsableBeamPlaceholder10" parent="." unique_id=127738614 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.8, 1.25, 0)
+
+[node name="CollapsableBeamPlaceholder11" parent="." unique_id=314796006 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.8, 0.25, 0)
+
+[node name="CollapsableBeamPlaceholder12" parent="." unique_id=476723065 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.8, -0.75, 0)
+
+[node name="CollapsableBeamPlaceholder13" parent="." unique_id=1798312055 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.6, 0.75, 0)
+
+[node name="CollapsableBeamPlaceholder14" parent="." unique_id=16009122 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.6, -0.25, 0)
+
+[node name="CollapsableBeamPlaceholder15" parent="." unique_id=634224535 instance=ExtResource("4_io2o7")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.6, -1.25, 0)

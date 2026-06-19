@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4jxk1owsgcng"]
+
+[ext_resource type="Texture2D" uid="uid://dupmsoh8ckx26" path="res://Materials/Cement_01_1024px.png" id="1_64kkf"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_64kkf")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+stencil_flags = 2

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dhxw38hveot6u"]
+
+[ext_resource type="Script" uid="uid://bal5xaydadjni" path="res://Scripts/Placeholder.cs" id="1_ct56d"]
+[ext_resource type="Material" uid="uid://by4u5km16jo5m" path="res://Materials/FloorInside.tres" id="2_ct56d"]
+[ext_resource type="PackedScene" uid="uid://cikpq66062g5a" path="res://Scenes/Destruction/CollapsableWallInsides.tscn" id="2_lavnx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lp6od"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="CollapsableWallInsidesPlaceholder" type="Node3D" unique_id=521601469]
+script = ExtResource("1_ct56d")
+Actual = ExtResource("2_lavnx")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=740021923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Mesh1" type="MeshInstance3D" parent="Node3D" unique_id=378718918]
+transform = Transform3D(0.65731245, 0.71716297, 0.23155478, -0.27262354, 0.51273024, -0.8141155, -0.70257866, 0.47200096, 0.5325395, 0, 0, 0)
+material_override = ExtResource("2_ct56d")
+gi_mode = 0
+mesh = SubResource("BoxMesh_lp6od")
+skeleton = NodePath("../..")
+
+[node name="Mesh2" type="MeshInstance3D" parent="Node3D" unique_id=565183337]
+transform = Transform3D(0.802939, 0.009697973, -0.5959823, -0.56489277, -0.3067117, -0.76604444, -0.19022384, 0.951753, -0.24079251, 0, 0, 0)
+material_override = ExtResource("2_ct56d")
+gi_mode = 0
+mesh = SubResource("BoxMesh_lp6od")
+skeleton = NodePath("../..")

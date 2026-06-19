@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bgq6h7vmtkcat"]
+
+[ext_resource type="PackedScene" uid="uid://blvoo1ejelp37" path="res://Scenes/Destruction/DestructibleWallPlaceholder.tscn" id="1_ufl4h"]
+[ext_resource type="PackedScene" uid="uid://btntnfln4jlei" path="res://Scenes/Destruction/DestructibleFloorPlaceholder.tscn" id="2_58y5n"]
+
+[node name="Base" type="Node3D" unique_id=1170799725]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=318788463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 2.0
+shadow_blur = 10.0
+omni_range = 32.0
+
+[node name="DestructibleWallPlaceholder" parent="." unique_id=2141523424 instance=ExtResource("1_ufl4h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 2, 0)
+
+[node name="DestructibleFloorPlaceholder" parent="." unique_id=609633633 instance=ExtResource("2_58y5n")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

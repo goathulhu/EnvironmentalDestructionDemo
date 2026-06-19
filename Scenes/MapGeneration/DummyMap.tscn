@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgserxcsehhma"]
+
+[ext_resource type="Script" uid="uid://d2wreaqqpss6t" path="res://Scripts/DummyMap.cs" id="1_b2715"]
+
+[node name="DummyMap" type="Node3D"]
+script = ExtResource("1_b2715")

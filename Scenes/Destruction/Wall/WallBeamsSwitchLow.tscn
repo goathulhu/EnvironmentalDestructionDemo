@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dx785aqnxyfml"]
+
+[ext_resource type="Script" uid="uid://dehkerpmebuol" path="res://Scripts/CollapsableGroup.cs" id="1_nvdn1"]
+[ext_resource type="Script" uid="uid://bwrxbhisfnwge" path="res://Scripts/PhysicsCollapsable.cs" id="2_v8cra"]
+[ext_resource type="Material" uid="uid://c8devu2tt17sb" path="res://Materials/WallBeams.tres" id="3_0jb8k"]
+[ext_resource type="ArrayMesh" uid="uid://bdaul5u2xq8wu" path="res://Meshes/Destruction/WallBeamsSwitchLow.res" id="3_v8cra"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pqtm"]
+size = Vector3(0.05, 0.9, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v3siu"]
+size = Vector3(0.05, 1, 0.1)
+
+[node name="WallBeamsSwitchLow" type="Node3D" unique_id=162185733 node_paths=PackedStringArray("Collapsables", "PhysicsCollapsables")]
+script = ExtResource("1_nvdn1")
+Collapsables = []
+PhysicsCollapsables = [NodePath("Beam1"), NodePath("Beam2"), NodePath("Beam3")]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1129781868]
+material_override = ExtResource("3_0jb8k")
+gi_mode = 0
+mesh = ExtResource("3_v8cra")
+
+[node name="Beam1" type="RigidBody3D" parent="." unique_id=753711537 node_paths=PackedStringArray("StructureProbes", "VisualProbes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
+collision_mask = 5
+can_sleep = false
+freeze = true
+script = ExtResource("2_v8cra")
+StructureProbes = [NodePath("StructureProbe1"), NodePath("StructureProbe2")]
+VisualProbes = []
+Dest = "OtherDestructionBlob"
+
+[node name="Collider" type="CollisionShape3D" parent="Beam1" unique_id=412702476]
+shape = SubResource("BoxShape3D_2pqtm")
+
+[node name="Mesh" type="MeshInstance3D" parent="Beam1" unique_id=1982501066]
+material_override = ExtResource("3_0jb8k")
+mesh = SubResource("BoxMesh_v3siu")
+
+[node name="StructureProbe1" type="Marker3D" parent="Beam1" unique_id=390352945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+gizmo_extents = 0.5
+
+[node name="StructureProbe2" type="Marker3D" parent="Beam1" unique_id=701279511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.475, 0)
+gizmo_extents = 0.5
+
+[node name="Beam2" type="RigidBody3D" parent="." unique_id=744617115 node_paths=PackedStringArray("StructureProbes", "VisualProbes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+collision_mask = 5
+can_sleep = false
+freeze = true
+script = ExtResource("2_v8cra")
+StructureProbes = [NodePath("StructureProbe1"), NodePath("StructureProbe2")]
+VisualProbes = []
+Dest = "OtherDestructionBlob"
+
+[node name="Collider" type="CollisionShape3D" parent="Beam2" unique_id=1528414137]
+shape = SubResource("BoxShape3D_2pqtm")
+
+[node name="Mesh" type="MeshInstance3D" parent="Beam2" unique_id=115142595]
+material_override = ExtResource("3_0jb8k")
+mesh = SubResource("BoxMesh_v3siu")
+
+[node name="StructureProbe1" type="Marker3D" parent="Beam2" unique_id=240633306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+gizmo_extents = 0.5
+
+[node name="StructureProbe2" type="Marker3D" parent="Beam2" unique_id=1368749467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.475, 0)
+gizmo_extents = 0.5
+
+[node name="Beam3" type="RigidBody3D" parent="." unique_id=1528349411 node_paths=PackedStringArray("StructureProbes", "VisualProbes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+collision_mask = 5
+can_sleep = false
+freeze = true
+script = ExtResource("2_v8cra")
+StructureProbes = [NodePath("StructureProbe1"), NodePath("StructureProbe2")]
+VisualProbes = []
+Dest = "OtherDestructionBlob"
+
+[node name="Collider" type="CollisionShape3D" parent="Beam3" unique_id=262182523]
+shape = SubResource("BoxShape3D_2pqtm")
+
+[node name="Mesh" type="MeshInstance3D" parent="Beam3" unique_id=1941313325]
+material_override = ExtResource("3_0jb8k")
+mesh = SubResource("BoxMesh_v3siu")
+
+[node name="StructureProbe1" type="Marker3D" parent="Beam3" unique_id=566297755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+gizmo_extents = 0.5
+
+[node name="StructureProbe2" type="Marker3D" parent="Beam3" unique_id=469498870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.475, 0)
+gizmo_extents = 0.5

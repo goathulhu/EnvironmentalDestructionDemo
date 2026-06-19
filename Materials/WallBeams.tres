@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c8devu2tt17sb"]
+
+[ext_resource type="Texture2D" uid="uid://c5g4ahlawkbap" path="res://Materials/Drywall_02_MrM_512px.png" id="1_ujiqm"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_ujiqm")
+metallic_specular = 0.0
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+uv1_world_triplanar = true
+stencil_flags = 2

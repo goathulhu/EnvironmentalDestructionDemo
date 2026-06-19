@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://ct4y6v02cln0o"]
+
+[node name="FoliageChunk" type="MultiMeshInstance3D"]
+cast_shadow = 0

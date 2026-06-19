@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b8o48xanaef80"]
+
+[ext_resource type="Script" uid="uid://bal5xaydadjni" path="res://Scripts/Placeholder.cs" id="1_2w5g1"]
+[ext_resource type="PackedScene" uid="uid://48svv6dm735x" path="res://Scenes/Destruction/CollapsableBeam.tscn" id="2_2w5g1"]
+[ext_resource type="Material" uid="uid://c8devu2tt17sb" path="res://Materials/WallBeams.tres" id="3_2g88x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0kq10"]
+size = Vector3(1, 0.05, 0.1)
+
+[node name="CollapsableBeamPlaceholder" type="Node3D" unique_id=2141523424]
+script = ExtResource("1_2w5g1")
+Actual = ExtResource("2_2w5g1")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1871716391]
+material_override = ExtResource("3_2g88x")
+gi_mode = 0
+mesh = SubResource("BoxMesh_0kq10")

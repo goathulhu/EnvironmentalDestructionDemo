@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bshbrehgfeor0"]
+
+[ext_resource type="Shader" uid="uid://chxebw77cgot6" path="res://Materials/Viewmodel.gdshader" id="1_qfp40"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qfp40")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/viewmodel_fov = 75.0

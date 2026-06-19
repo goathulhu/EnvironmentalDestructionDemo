@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmngjr2youwv0"]
+
+[ext_resource type="Texture2D" uid="uid://c6ai4uy8v2nmx" path="res://Materials/tiles.png" id="1_0mfmo"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_0mfmo")
+metallic_specular = 0.0
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+stencil_flags = 2

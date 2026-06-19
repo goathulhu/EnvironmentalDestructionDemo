@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crgxh3w4pu5w5"]
+
+[ext_resource type="Texture2D" uid="uid://i7om2vtrvlyx" path="res://Materials/Bread_01_512px.png" id="1_a141i"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_a141i")
+metallic_specular = 0.0
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+uv1_world_triplanar = true
+stencil_flags = 2

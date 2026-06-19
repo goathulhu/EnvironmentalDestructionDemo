@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cu6qhyjnbaa04"]
+
+[ext_resource type="ArrayMesh" uid="uid://ch816xao5g35b" path="res://Meshes/Destruction/DestructionBlob.res" id="1_otkvw"]
+
+[node name="DestructionBlob" type="CSGMesh3D" unique_id=705921612]
+cast_shadow = 0
+operation = 2
+calculate_tangents = false
+mesh = ExtResource("1_otkvw")

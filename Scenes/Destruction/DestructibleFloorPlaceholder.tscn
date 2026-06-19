@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://btntnfln4jlei"]
+
+[ext_resource type="Script" uid="uid://bal5xaydadjni" path="res://Scripts/Placeholder.cs" id="1_t8ka0"]
+[ext_resource type="PackedScene" uid="uid://bcss20gyp0y5t" path="res://Scenes/Destruction/DestructibleFloor.tscn" id="2_3jlmo"]
+[ext_resource type="Material" uid="uid://l8f05ym68v5w" path="res://Materials/Placeholder.tres" id="3_xt10h"]
+[ext_resource type="ArrayMesh" uid="uid://df8tkn4d5x037" path="res://Meshes/Destruction/DestructableSurfaceFloor.res" id="4_3jlmo"]
+[ext_resource type="ArrayMesh" uid="uid://ddrrffc3o1fxf" path="res://Meshes/Destruction/FloorBeams.res" id="6_cn8c3"]
+
+[node name="DestructibleFloorPlaceholder" type="Node3D" unique_id=2141523424]
+script = ExtResource("1_t8ka0")
+SpawnDelay = 0.125
+Actual = ExtResource("2_3jlmo")
+
+[node name="Mesh1" type="MeshInstance3D" parent="." unique_id=1871716391]
+material_override = ExtResource("3_xt10h")
+cast_shadow = 0
+mesh = ExtResource("4_3jlmo")
+
+[node name="Mesh2" type="MeshInstance3D" parent="." unique_id=2045134383]
+material_override = ExtResource("3_xt10h")
+cast_shadow = 0
+mesh = ExtResource("6_cn8c3")

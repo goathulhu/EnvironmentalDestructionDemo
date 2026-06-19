@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://blvoo1ejelp37"]
+
+[ext_resource type="Script" uid="uid://bal5xaydadjni" path="res://Scripts/Placeholder.cs" id="1_0kq10"]
+[ext_resource type="PackedScene" uid="uid://vavaplfaxb5i" path="res://Scenes/Destruction/Wall/DestructibleWall.tscn" id="2_ubjse"]
+[ext_resource type="Material" uid="uid://l8f05ym68v5w" path="res://Materials/Placeholder.tres" id="3_1gbus"]
+[ext_resource type="ArrayMesh" uid="uid://bg2nhpoj4shwa" path="res://Meshes/Destruction/DestructableSurfaceWall.res" id="4_ubjse"]
+[ext_resource type="ArrayMesh" uid="uid://qphw033mtax" path="res://Meshes/Destruction/PreWallBeamsSwitch.res" id="5_ubjse"]
+
+[node name="DestructibleWallPlaceholder" type="Node3D" unique_id=2141523424]
+script = ExtResource("1_0kq10")
+SpawnDelay = 0.125
+Actual = ExtResource("2_ubjse")
+
+[node name="Mesh1" type="MeshInstance3D" parent="." unique_id=1871716391]
+material_override = ExtResource("3_1gbus")
+cast_shadow = 0
+mesh = ExtResource("4_ubjse")
+
+[node name="Mesh2" type="MeshInstance3D" parent="." unique_id=462460783]
+material_override = ExtResource("3_1gbus")
+cast_shadow = 0
+mesh = ExtResource("5_ubjse")

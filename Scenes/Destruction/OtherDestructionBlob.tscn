@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b05x51u73gr18"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_trhqc"]
+radial_segments = 5
+rings = 3
+
+[node name="OtherDestructionBlob" type="CSGMesh3D" unique_id=705921612]
+cast_shadow = 0
+operation = 2
+calculate_tangents = false
+mesh = SubResource("SphereMesh_trhqc")

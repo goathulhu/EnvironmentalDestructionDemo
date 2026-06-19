@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://vavaplfaxb5i"]
+
+[ext_resource type="Material" uid="uid://c4jxk1owsgcng" path="res://Materials/Wall.tres" id="1_icjv1"]
+[ext_resource type="ArrayMesh" uid="uid://bg2nhpoj4shwa" path="res://Meshes/Destruction/DestructableSurfaceWall.res" id="2_icjv1"]
+[ext_resource type="Script" uid="uid://b85tv4y4ukv0" path="res://Scripts/DestructibleWall.cs" id="3_xuixv"]
+[ext_resource type="Material" uid="uid://c8devu2tt17sb" path="res://Materials/WallBeams.tres" id="4_ep4fv"]
+[ext_resource type="PackedScene" uid="uid://blf5m3l7msge3" path="res://Scenes/Destruction/Wall/WallBeamsSwitchMid.tscn" id="4_n8uj4"]
+[ext_resource type="PackedScene" uid="uid://cqu6yns4ryn6l" path="res://Scenes/Destruction/Wall/WallBeamsSwitchHigh.tscn" id="4_u33hy"]
+[ext_resource type="PackedScene" uid="uid://dx785aqnxyfml" path="res://Scenes/Destruction/Wall/WallBeamsSwitchLow.tscn" id="6_smfk1"]
+[ext_resource type="ArrayMesh" uid="uid://qphw033mtax" path="res://Meshes/Destruction/PreWallBeamsSwitch.res" id="8_u33hy"]
+
+[node name="DestructibleWall" type="Node3D" unique_id=155879927]
+
+[node name="Wall" type="CSGMesh3D" parent="." unique_id=2038983504 node_paths=PackedStringArray("BeamsPlaceholderMesh", "BeamSpots")]
+material_override = ExtResource("1_icjv1")
+gi_mode = 0
+calculate_tangents = false
+use_collision = true
+mesh = ExtResource("2_icjv1")
+script = ExtResource("3_xuixv")
+BeamsPlaceholderMesh = NodePath("../BeamsPlaceholderMesh")
+BeamSpots = [NodePath("../BeamSpot1"), NodePath("../BeamSpot2"), NodePath("../BeamSpot3"), NodePath("../BeamSpot4"), NodePath("../BeamSpot5")]
+BeamPrefabs = Array[PackedScene]([ExtResource("6_smfk1"), ExtResource("4_n8uj4"), ExtResource("4_u33hy")])
+DestScalMult = 1.5
+
+[node name="BeamsPlaceholderMesh" type="MeshInstance3D" parent="." unique_id=1164296413]
+material_override = ExtResource("4_ep4fv")
+gi_mode = 0
+mesh = ExtResource("8_u33hy")
+
+[node name="BeamSpot1" type="Marker3D" parent="." unique_id=932760151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, 0)
+gizmo_extents = 0.5
+
+[node name="BeamSpot2" type="Marker3D" parent="." unique_id=48814297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+gizmo_extents = 0.5
+
+[node name="BeamSpot3" type="Marker3D" parent="." unique_id=1817253347]
+gizmo_extents = 0.5
+
+[node name="BeamSpot4" type="Marker3D" parent="." unique_id=1385507390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+gizmo_extents = 0.5
+
+[node name="BeamSpot5" type="Marker3D" parent="." unique_id=165981332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0)
+gizmo_extents = 0.5

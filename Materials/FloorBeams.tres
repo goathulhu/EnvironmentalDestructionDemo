@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dx8ty1i322xrh"]
+
+[ext_resource type="Texture2D" uid="uid://cc5bvs8gssehd" path="res://Materials/Metal_tread_01_1024px.png" id="1_dbbfx"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_dbbfx")
+metallic_specular = 0.0
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+uv1_world_triplanar = true
+stencil_flags = 2

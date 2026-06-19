@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7myj2vtqlu5t"]
+
+[ext_resource type="Texture2D" uid="uid://c1xgni81pyoxg" path="res://Materials/chipboard.png" id="1_wpvoi"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_wpvoi")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+stencil_flags = 2
