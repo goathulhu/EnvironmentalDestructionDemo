@@ -112,12 +112,12 @@ public partial class Viewmodel : Node3D
 				// orientation
 				Arms.RigTransform.Position = CurrentState.Left.RigTransform.Position;
 				Arms.RigTransform.Rotation = CurrentState.Left.RigTransform.Rotation;
-				
-				Arms.InnerTransform.Position = CurrentState.Left.InnerTransform.Position;
-				Arms.InnerTransform.Rotation = CurrentState.Left.InnerTransform.Rotation;
-				
-				Arms.OuterTransform.Position = CurrentState.Left.OuterTransform.Position;
-				Arms.OuterTransform.Rotation = CurrentState.Left.OuterTransform.Rotation;
+				Arms.InnTransform.Position = CurrentState.Left.InnTransform.Position;
+				Arms.InnTransform.Rotation = CurrentState.Left.InnTransform.Rotation;
+				Arms.MidTransform.Position = CurrentState.Left.MidTransform.Position;
+				Arms.MidTransform.Rotation = CurrentState.Left.MidTransform.Rotation;
+				Arms.OutTransform.Position = CurrentState.Left.OutTransform.Position;
+				Arms.OutTransform.Rotation = CurrentState.Left.OutTransform.Rotation;
 			}
 			else
 			{
@@ -137,12 +137,12 @@ public partial class Viewmodel : Node3D
 				// orientation
 				Arms.RigTransform.Position = CurrentState.Right.RigTransform.Position;
 				Arms.RigTransform.Rotation = CurrentState.Right.RigTransform.Rotation;
-				
-				Arms.InnerTransform.Position = CurrentState.Right.InnerTransform.Position;
-				Arms.InnerTransform.Rotation = CurrentState.Right.InnerTransform.Rotation;
-				
-				Arms.OuterTransform.Position = CurrentState.Right.OuterTransform.Position;
-				Arms.OuterTransform.Rotation = CurrentState.Right.OuterTransform.Rotation;
+				Arms.InnTransform.Position = CurrentState.Right.InnTransform.Position;
+				Arms.InnTransform.Rotation = CurrentState.Right.InnTransform.Rotation;
+				Arms.MidTransform.Position = CurrentState.Right.MidTransform.Position;
+				Arms.MidTransform.Rotation = CurrentState.Right.MidTransform.Rotation;
+				Arms.OutTransform.Position = CurrentState.Right.OutTransform.Position;
+				Arms.OutTransform.Rotation = CurrentState.Right.OutTransform.Rotation;
 			}
 		}
 	}
@@ -233,26 +233,26 @@ public partial class Viewmodel : Node3D
 		ShotgunOverride.Get.Transform = ShotgunOverride.Skeleton.GetBoneGlobalPose(ShotgunOverride.Skeleton.FindBone("viewmodel_pivot"));
 		ViewmodelPivot = (ShotgunOverride.Get.Position, ShotgunOverride.Get.Rotation);
 		ShotgunOverride.RigTransform.Position = -ViewmodelPivot.Position;
-		ShotgunOverride.InnerTransform.Position = ViewmodelPivot.Position;
+		ShotgunOverride.InnTransform.Position = ViewmodelPivot.Position;
 		
 		if (Player.WalkTimer > 0f)
 		{
 			WalkAngle = Mathf.Clamp(Mathf.Lerp(WalkAngle, Player.InputDirection.X, DeltaTime * 8f), -1f, 1f);
 			
-			ShotgunOverride.InnerTransform.Rotation = ShotgunOverride.InnerTransform.Rotation.Lerp(
+			ShotgunOverride.InnTransform.Rotation = ShotgunOverride.InnTransform.Rotation.Lerp(
 				new Vector3(
 					UDMouseHang * -0.25f + Mathf.DegToRad(Mathf.Sin(Player.WalkTimer * 20f) * -0.5f) + Mathf.Clamp(Mathf.DegToRad(Player.CurrentCameraRot.X * 0.05f), 0f, 90f) + JitterRot.X + JumpHangRot * -0.0333f, 
 					Mathf.DegToRad(Mathf.Sin(Player.WalkTimer * 10f) * 0.5f) + JitterRot.Y, 
 					Mathf.DegToRad(LRMoveHang * -7.5f) + Mathf.DegToRad(Mathf.Sin(Player.WalkTimer * 10f) * 6.66f) + JitterRot.Z
 				), DeltaTime * 24f);
 			
-			ShotgunOverride.OuterTransform.Position = ShotgunOverride.OuterTransform.Position.Lerp(
+			ShotgunOverride.OutTransform.Position = ShotgunOverride.OutTransform.Position.Lerp(
 				new Vector3(
 					LRMoveHang * 0.01f + LRMouseHang * -0.1f + JitterPos.X, 
 					Mathf.Lerp(0f, -0.025f, CrouchLerp) + Mathf.Sin(BreatheTimer) * 0.0075f + JitterPos.Y + JumpHangPos + 0.0333f, 
 					FBMoveHang * 0.025f + Mathf.Lerp(0f, 0.1f, CrouchLerp) + Mathf.Abs(Player.CurrentCameraRot.X * 0.001f) + JitterPos.Z + 0.0666f
 				), DeltaTime * 24f);
-			ShotgunOverride.OuterTransform.Rotation = ShotgunOverride.OuterTransform.Rotation.Lerp(
+			ShotgunOverride.OutTransform.Rotation = ShotgunOverride.OutTransform.Rotation.Lerp(
 				new Vector3(
 					Mathf.DegToRad(Mathf.Sin(Player.WalkTimer * 20f) * -(Mathf.Sin(Player.WalkTimer * 20f) < 0f ? 0f : 2.5f)) + UDMouseHang * 0.25f + Mathf.DegToRad(Player.CurrentCameraRot.X * -0.05f), 
 					Mathf.DegToRad(Mathf.Sin(Player.WalkTimer * 10f + 5f) * -3.75f) + LRMouseHang * 0.25f, 
@@ -261,20 +261,20 @@ public partial class Viewmodel : Node3D
 		}
 		else
 		{
-			ShotgunOverride.InnerTransform.Rotation = ShotgunOverride.InnerTransform.Rotation.Lerp(
+			ShotgunOverride.InnTransform.Rotation = ShotgunOverride.InnTransform.Rotation.Lerp(
 				new Vector3(
 					UDMouseHang * -0.25f + Mathf.Clamp(Mathf.DegToRad(Player.CurrentCameraRot.X * 0.05f), 0f, 90f) + JitterRot.X + JumpHangRot * -0.0333f, 
 					JitterRot.Y, 
 					Mathf.DegToRad(LRMoveHang * -7.5f) + JitterRot.Z
 				), DeltaTime * 24f);
 			
-			ShotgunOverride.OuterTransform.Position = ShotgunOverride.OuterTransform.Position.Lerp(
+			ShotgunOverride.OutTransform.Position = ShotgunOverride.OutTransform.Position.Lerp(
 				new Vector3(
 					LRMoveHang * 0.01f + LRMouseHang * -0.1f + JitterPos.X, 
 					Mathf.Lerp(0f, -0.025f, CrouchLerp) + Mathf.Sin(BreatheTimer) * 0.0075f + JitterPos.Y + JumpHangPos + 0.0333f, 
 					FBMoveHang * 0.025f + Mathf.Lerp(0f, 0.1f, CrouchLerp) + Mathf.Abs(Player.CurrentCameraRot.X * 0.001f) + JitterPos.Z + 0.0666f
 				), DeltaTime * 24f);
-			ShotgunOverride.OuterTransform.Rotation = ShotgunOverride.OuterTransform.Rotation.Lerp(
+			ShotgunOverride.OutTransform.Rotation = ShotgunOverride.OutTransform.Rotation.Lerp(
 				new Vector3(
 					UDMouseHang * 0.25f + Mathf.DegToRad(Player.CurrentCameraRot.X * -0.05f), 
 					LRMouseHang * 0.125f, 

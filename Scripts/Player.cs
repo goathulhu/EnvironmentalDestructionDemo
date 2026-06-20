@@ -38,7 +38,7 @@ public partial class Player : Node3D
 	public CapsuleShape3D ColliderShape;
 	[Export] public Node3D CameraTargetPos;
 	
-	[ExportCategory("Camera")]
+	[ExportCategory("View")]
 	[Export] public Node3D PlayerView;
 	[Export] public Node3D CameraMotionGlobal;
 	[Export] public Node3D CamRotY;
@@ -78,6 +78,7 @@ public partial class Player : Node3D
 	
 	private float InputTimeoutTimer = 0f;
 	
+	[ExportCategory("Dev")]
 	[Export] RichTextLabel DebugLabel;
 	
 	public override void _Ready()

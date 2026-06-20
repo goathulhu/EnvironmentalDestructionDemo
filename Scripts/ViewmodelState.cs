@@ -29,14 +29,16 @@ public class ViewmodelState
 	
 	public (float Control, 
 		(Vector3 Position, Vector3 Rotation) RigTransform, 
-		(Vector3 Position, Vector3 Rotation) InnerTransform, 
-		(Vector3 Position, Vector3 Rotation) OuterTransform, 
+		(Vector3 Position, Vector3 Rotation) InnTransform, 
+		(Vector3 Position, Vector3 Rotation) MidTransform, 
+		(Vector3 Position, Vector3 Rotation) OutTransform, 
 		(Vector3 Pole, Vector3 Target) Ik, 
 		(Vector3 Position, Quaternion Rotation)[] Bones) Left;
 	public (float Control, 
 		(Vector3 Position, Vector3 Rotation) RigTransform, 
-		(Vector3 Position, Vector3 Rotation) InnerTransform, 
-		(Vector3 Position, Vector3 Rotation) OuterTransform, 
+		(Vector3 Position, Vector3 Rotation) InnTransform, 
+		(Vector3 Position, Vector3 Rotation) MidTransform, 
+		(Vector3 Position, Vector3 Rotation) OutTransform, 
 		(Vector3 Pole, Vector3 Target) Ik, 
 		(Vector3 Position, Quaternion Rotation)[] Bones) Right;
 	
@@ -64,17 +66,21 @@ public class ViewmodelState
 		// orientation
 		NewState.Left.RigTransform.Position = NewState.Left.RigTransform.Position.Lerp(OtherState.Left.RigTransform.Position, OtherState.Left.Control);
 		NewState.Left.RigTransform.Rotation = NewState.Left.RigTransform.Rotation.Lerp(OtherState.Left.RigTransform.Rotation, OtherState.Left.Control);
-		NewState.Left.InnerTransform.Position = NewState.Left.InnerTransform.Position.Lerp(OtherState.Left.InnerTransform.Position, OtherState.Left.Control);
-		NewState.Left.InnerTransform.Rotation = NewState.Left.InnerTransform.Rotation.Lerp(OtherState.Left.InnerTransform.Rotation, OtherState.Left.Control);
-		NewState.Left.OuterTransform.Position = NewState.Left.OuterTransform.Position.Lerp(OtherState.Left.OuterTransform.Position, OtherState.Left.Control);
-		NewState.Left.OuterTransform.Rotation = NewState.Left.OuterTransform.Rotation.Lerp(OtherState.Left.OuterTransform.Rotation, OtherState.Left.Control);
+		NewState.Left.InnTransform.Position = NewState.Left.InnTransform.Position.Lerp(OtherState.Left.InnTransform.Position, OtherState.Left.Control);
+		NewState.Left.InnTransform.Rotation = NewState.Left.InnTransform.Rotation.Lerp(OtherState.Left.InnTransform.Rotation, OtherState.Left.Control);
+		NewState.Left.MidTransform.Position = NewState.Left.MidTransform.Position.Lerp(OtherState.Left.MidTransform.Position, OtherState.Left.Control);
+		NewState.Left.MidTransform.Rotation = NewState.Left.MidTransform.Rotation.Lerp(OtherState.Left.MidTransform.Rotation, OtherState.Left.Control);
+		NewState.Left.OutTransform.Position = NewState.Left.OutTransform.Position.Lerp(OtherState.Left.OutTransform.Position, OtherState.Left.Control);
+		NewState.Left.OutTransform.Rotation = NewState.Left.OutTransform.Rotation.Lerp(OtherState.Left.OutTransform.Rotation, OtherState.Left.Control);
 		
 		NewState.Right.RigTransform.Position = NewState.Right.RigTransform.Position.Lerp(OtherState.Right.RigTransform.Position, OtherState.Right.Control);
 		NewState.Right.RigTransform.Rotation = NewState.Right.RigTransform.Rotation.Lerp(OtherState.Right.RigTransform.Rotation, OtherState.Right.Control);
-		NewState.Right.InnerTransform.Position = NewState.Right.InnerTransform.Position.Lerp(OtherState.Right.InnerTransform.Position, OtherState.Right.Control);
-		NewState.Right.InnerTransform.Rotation = NewState.Right.InnerTransform.Rotation.Lerp(OtherState.Right.InnerTransform.Rotation, OtherState.Right.Control);
-		NewState.Right.OuterTransform.Position = NewState.Right.OuterTransform.Position.Lerp(OtherState.Right.OuterTransform.Position, OtherState.Right.Control);
-		NewState.Right.OuterTransform.Rotation = NewState.Right.OuterTransform.Rotation.Lerp(OtherState.Right.OuterTransform.Rotation, OtherState.Right.Control);
+		NewState.Right.InnTransform.Position = NewState.Right.InnTransform.Position.Lerp(OtherState.Right.InnTransform.Position, OtherState.Right.Control);
+		NewState.Right.InnTransform.Rotation = NewState.Right.InnTransform.Rotation.Lerp(OtherState.Right.InnTransform.Rotation, OtherState.Right.Control);
+		NewState.Right.MidTransform.Position = NewState.Right.MidTransform.Position.Lerp(OtherState.Right.MidTransform.Position, OtherState.Right.Control);
+		NewState.Right.MidTransform.Rotation = NewState.Right.MidTransform.Rotation.Lerp(OtherState.Right.MidTransform.Rotation, OtherState.Right.Control);
+		NewState.Right.OutTransform.Position = NewState.Right.OutTransform.Position.Lerp(OtherState.Right.OutTransform.Position, OtherState.Right.Control);
+		NewState.Right.OutTransform.Rotation = NewState.Right.OutTransform.Rotation.Lerp(OtherState.Right.OutTransform.Rotation, OtherState.Right.Control);
 		
 		return NewState;
 	}

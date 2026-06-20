@@ -12,11 +12,13 @@ public partial class ViewmodelOverride : Node3D
 	Viewmodel Viewmodel;
 	
 	[Export] public string Id;
+	[ExportCategory(" ")]
 	[Export] public AnimationPlayer Animator;
 	[Export] public Skeleton3D Skeleton;
 	[Export] public Node3D RigTransform;
-	[Export] public Node3D InnerTransform;
-	[Export] public Node3D OuterTransform;
+	[Export] public Node3D InnTransform;
+	[Export] public Node3D MidTransform;
+	[Export] public Node3D OutTransform;
 	[Export] public Node3D Get;
 	
 	public override void _Ready()
@@ -65,12 +67,14 @@ public partial class ViewmodelOverride : Node3D
 		
 		// orientation
 		State.Left.RigTransform = (RigTransform.Position, RigTransform.Rotation);
-		State.Left.InnerTransform = (InnerTransform.Position, InnerTransform.Rotation);
-		State.Left.OuterTransform = (OuterTransform.Position, OuterTransform.Rotation);
+		State.Left.InnTransform = (InnTransform.Position, InnTransform.Rotation);
+		State.Left.MidTransform = (MidTransform.Position, MidTransform.Rotation);
+		State.Left.OutTransform = (OutTransform.Position, OutTransform.Rotation);
 		
 		State.Right.RigTransform = (RigTransform.Position, RigTransform.Rotation);
-		State.Right.InnerTransform = (InnerTransform.Position, InnerTransform.Rotation);
-		State.Right.OuterTransform = (OuterTransform.Position, OuterTransform.Rotation);
+		State.Right.InnTransform = (InnTransform.Position, InnTransform.Rotation);
+		State.Right.MidTransform = (MidTransform.Position, MidTransform.Rotation);
+		State.Right.OutTransform = (OutTransform.Position, OutTransform.Rotation);
 		
 		// control
 		State.Left.Control = Mathf.Clamp(Skeleton.GetBonePosePosition(Skeleton.FindBone("control.L")).Y, 0f, 1f);

@@ -1964,23 +1964,26 @@ ShotgunOverride = NodePath("Overrides/ShotgunOverride")
 
 [node name="Arms" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel" unique_id=1435661337]
 
-[node name="LeftArm" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms" unique_id=1081506698 node_paths=PackedStringArray("Skeleton", "RigTransform", "InnerTransform", "OuterTransform", "Ik", "IkTarget")]
+[node name="LeftArm" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms" unique_id=1081506698 node_paths=PackedStringArray("Skeleton", "RigTransform", "InnTransform", "MidTransform", "OutTransform", "Ik", "IkTarget")]
 script = ExtResource("14_8r6kd")
 Id = "LeftArm"
-Skeleton = NodePath("OuterTransform/InnerTransform/Rig/Skeleton3D")
-RigTransform = NodePath("OuterTransform/InnerTransform/Rig")
-InnerTransform = NodePath("OuterTransform/InnerTransform")
-OuterTransform = NodePath("OuterTransform")
-Ik = NodePath("OuterTransform/InnerTransform/Rig/Skeleton3D/IkLeft")
+Skeleton = NodePath("OutTransform/MidTransform/InnTransform/Rig/Skeleton3D")
+RigTransform = NodePath("OutTransform/MidTransform/InnTransform/Rig")
+InnTransform = NodePath("OutTransform/MidTransform/InnTransform")
+MidTransform = NodePath("OutTransform/MidTransform")
+OutTransform = NodePath("OutTransform")
+Ik = NodePath("OutTransform/MidTransform/InnTransform/Rig/Skeleton3D/IkLeft")
 IkTarget = NodePath("IkTargetLeft")
 
-[node name="OuterTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm" unique_id=1921558996]
+[node name="OutTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm" unique_id=1921558996]
 
-[node name="InnerTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OuterTransform" unique_id=681316629]
+[node name="MidTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform" unique_id=1205986436]
 
-[node name="Rig" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OuterTransform/InnerTransform" unique_id=1206607997]
+[node name="InnTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform/MidTransform" unique_id=681316629]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OuterTransform/InnerTransform/Rig" unique_id=1675498089]
+[node name="Rig" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform/MidTransform/InnTransform" unique_id=1206607997]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform/MidTransform/InnTransform/Rig" unique_id=1675498089]
 bones/0/name = "ik_target.L"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1953, 0, -1.8626451e-08)
@@ -2472,45 +2475,48 @@ bones/69/position = Vector3(-6.519258e-09, 0.016519392, 3.3527613e-08)
 bones/69/rotation = Quaternion(0.54949456, 0.42070526, -0.45245415, 0.5624482)
 bones/69/scale = Vector3(1, 1, 1.0000004)
 
-[node name="Arms" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=739366920]
+[node name="Arms" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=739366920]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_biiha")
 skin = SubResource("Skin_l5wcv")
 
-[node name="Gloves" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=1890687922]
+[node name="Gloves" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=1890687922]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_g1ccb")
 skin = SubResource("Skin_l5wcv")
 
-[node name="IkLeft" type="SkeletonIK3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=651792710]
+[node name="IkLeft" type="SkeletonIK3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=651792710]
 root_bone = &"forearm.L"
 tip_bone = &"upper_arm.L_leaf"
 use_magnet = true
-target_node = NodePath("../../../../../IkTargetLeft")
+target_node = NodePath("../../../../../../IkTargetLeft")
 script = ExtResource("16_rajel")
 
 [node name="IkTargetLeft" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/LeftArm" unique_id=1834288590]
 
-[node name="RightArm" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms" unique_id=90397755 node_paths=PackedStringArray("Skeleton", "RigTransform", "InnerTransform", "OuterTransform", "Ik", "IkTarget")]
+[node name="RightArm" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms" unique_id=90397755 node_paths=PackedStringArray("Skeleton", "RigTransform", "InnTransform", "MidTransform", "OutTransform", "Ik", "IkTarget")]
 script = ExtResource("14_8r6kd")
 Id = "RightArm"
-Skeleton = NodePath("OuterTransform/InnerTransform/Rig/Skeleton3D")
-RigTransform = NodePath("OuterTransform/InnerTransform/Rig")
-InnerTransform = NodePath("OuterTransform/InnerTransform")
-OuterTransform = NodePath("OuterTransform")
-Ik = NodePath("OuterTransform/InnerTransform/Rig/Skeleton3D/IkRight")
-IkTarget = NodePath("IkTargetRight")
 IsLeft = false
+Skeleton = NodePath("OutTransform/MidTransform/InnTransform/Rig/Skeleton3D")
+RigTransform = NodePath("OutTransform/MidTransform/InnTransform/Rig")
+InnTransform = NodePath("OutTransform/MidTransform/InnTransform")
+MidTransform = NodePath("OutTransform/MidTransform")
+OutTransform = NodePath("OutTransform")
+Ik = NodePath("OutTransform/MidTransform/InnTransform/Rig/Skeleton3D/IkRight")
+IkTarget = NodePath("IkTargetRight")
 
-[node name="OuterTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm" unique_id=1990845806]
+[node name="OutTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm" unique_id=1990845806]
 
-[node name="InnerTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OuterTransform" unique_id=1525654980]
+[node name="MidTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform" unique_id=1639877197]
 
-[node name="Rig" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OuterTransform/InnerTransform" unique_id=505488519]
+[node name="InnTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform/MidTransform" unique_id=1525654980]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OuterTransform/InnerTransform/Rig" unique_id=741622125]
+[node name="Rig" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform/MidTransform/InnTransform" unique_id=505488519]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform/MidTransform/InnTransform/Rig" unique_id=741622125]
 bones/0/name = "ik_target.L"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1953, 0, -1.8626451e-08)
@@ -3002,46 +3008,49 @@ bones/69/position = Vector3(-6.519258e-09, 0.016519392, 3.3527613e-08)
 bones/69/rotation = Quaternion(0.54949456, 0.42070526, -0.45245415, 0.5624482)
 bones/69/scale = Vector3(1, 1, 1.0000004)
 
-[node name="Arms" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=1045466066]
+[node name="Arms" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=1045466066]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_biiha")
 skin = SubResource("Skin_l5wcv")
 
-[node name="Gloves" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=1427749073]
+[node name="Gloves" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=1427749073]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_g1ccb")
 skin = SubResource("Skin_l5wcv")
 
-[node name="IkRight" type="SkeletonIK3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=659210563]
+[node name="IkRight" type="SkeletonIK3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=659210563]
 root_bone = &"forearm.R"
 tip_bone = &"upper_arm.R_leaf"
 use_magnet = true
-target_node = NodePath("../../../../../IkTargetRight")
+target_node = NodePath("../../../../../../IkTargetRight")
 script = ExtResource("16_rajel")
 
 [node name="IkTargetRight" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Arms/RightArm" unique_id=1332579569]
 
 [node name="Overrides" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel" unique_id=35729930]
 
-[node name="ShotgunOverride" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides" unique_id=833084263 node_paths=PackedStringArray("Animator", "Skeleton", "RigTransform", "InnerTransform", "OuterTransform", "Get")]
+[node name="ShotgunOverride" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides" unique_id=833084263 node_paths=PackedStringArray("Animator", "Skeleton", "RigTransform", "InnTransform", "MidTransform", "OutTransform", "Get")]
 script = ExtResource("16_tfod6")
 Id = "Shotgun"
-Animator = NodePath("OuterTransform/InnerTransform/AnimationPlayer")
-Skeleton = NodePath("OuterTransform/InnerTransform/Rig/Skeleton3D")
-RigTransform = NodePath("OuterTransform/InnerTransform/Rig")
-InnerTransform = NodePath("OuterTransform/InnerTransform")
-OuterTransform = NodePath("OuterTransform")
-Get = NodePath("OuterTransform/InnerTransform/Rig/Get")
+Animator = NodePath("OutTransform/MidTransform/InnTransform/AnimationPlayer")
+Skeleton = NodePath("OutTransform/MidTransform/InnTransform/Rig/Skeleton3D")
+RigTransform = NodePath("OutTransform/MidTransform/InnTransform/Rig")
+InnTransform = NodePath("OutTransform/MidTransform/InnTransform")
+MidTransform = NodePath("OutTransform/MidTransform")
+OutTransform = NodePath("OutTransform")
+Get = NodePath("OutTransform/MidTransform/InnTransform/Rig/Get")
 
-[node name="OuterTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride" unique_id=1078893880]
+[node name="OutTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride" unique_id=1078893880]
 
-[node name="InnerTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform" unique_id=244023355]
+[node name="MidTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform" unique_id=1066031251]
 
-[node name="Rig" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform" unique_id=618088081]
+[node name="InnTransform" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform" unique_id=244023355]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig" unique_id=286349388]
+[node name="Rig" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform" unique_id=618088081]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig" unique_id=286349388]
 bones/0/name = "ik_target.L"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1953, 0, -1.8626451e-08)
@@ -3603,39 +3612,39 @@ bones/79/position = Vector3(0, 0.099999905, 0)
 bones/79/rotation = Quaternion(-0.70710677, 0, 0, 0.70710677)
 bones/79/scale = Vector3(1, 1, 1)
 
-[node name="lever" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=849544501]
+[node name="lever" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=849544501]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_vif0g")
 skin = SubResource("Skin_uncxs")
 
-[node name="lower" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=1138080376]
+[node name="lower" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=1138080376]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_d6l2s")
 skin = SubResource("Skin_uncxs")
 
-[node name="shell" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=619070309]
+[node name="shell" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=619070309]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_fje8d")
 skin = SubResource("Skin_uncxs")
 
-[node name="trigger" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=516145709]
+[node name="trigger" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=516145709]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_qspkh")
 skin = SubResource("Skin_uncxs")
 
-[node name="upper" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig/Skeleton3D" unique_id=1193567524]
+[node name="upper" type="MeshInstance3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig/Skeleton3D" unique_id=1193567524]
 material_override = ExtResource("15_8r6kd")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_ob5ca")
 skin = SubResource("Skin_uncxs")
 
-[node name="Get" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform/Rig" unique_id=1599995843]
+[node name="Get" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform/Rig" unique_id=1599995843]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OuterTransform/InnerTransform" unique_id=2021702238]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Viewmodel/Overrides/ShotgunOverride/OutTransform/MidTransform/InnTransform" unique_id=2021702238]
 libraries/ = SubResource("AnimationLibrary_jwqfl")
 script = ExtResource("16_8r6kd")
 
