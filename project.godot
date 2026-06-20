@@ -14,10 +14,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Environmental Destruction - gd 4.7"
+config/name="Environmental Destruction Demo"
 run/main_scene="uid://bqoegoja1oit7"
 run/print_header=false
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 run/delta_smoothing=false
 boot_splash/show_image=false
 

@@ -182,8 +182,8 @@ public partial class Viewmodel : Node3D
 	
 	public void Land()
 	{
-		JumpHangRotTarget = Mathf.DegToRad(-2f);
-		JumpHangPosTarget = -0.05f;
+		//JumpHangRotTarget = Mathf.DegToRad(-2f);
+		//JumpHangPosTarget = -0.05f;
 	}
 	
 	private void PseudoItem()
