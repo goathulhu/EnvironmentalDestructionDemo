@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://c4jxk1owsgcng" path="res://Materials/Wall.tres" id="1_1dh3y"]
 [ext_resource type="ArrayMesh" uid="uid://bg2nhpoj4shwa" path="res://Meshes/Destruction/DestructableSurfaceWall.res" id="2_37vdg"]
-[ext_resource type="Script" uid="uid://dw6xcayjubgke" path="res://Scripts/Destructible.cs" id="3_o6ya4"]
+[ext_resource type="Script" uid="uid://dw6xcayjubgke" path="res://Scripts/Destruction/Destructible.cs" id="3_o6ya4"]
 [ext_resource type="PackedScene" uid="uid://b8o48xanaef80" path="res://Scenes/Destruction/CollapsableBeamPlaceholder.tscn" id="4_io2o7"]
 
 [node name="DestructibleWall" type="Node3D" unique_id=155879927]

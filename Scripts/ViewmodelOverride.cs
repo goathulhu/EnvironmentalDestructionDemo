@@ -30,6 +30,11 @@ public partial class ViewmodelOverride : Node3D
 		Viewmodel = GameManager.Viewmodel;
 	}
 	
+	public void Play(string Animation)
+	{
+		Animator.Play(Animation);
+	}
+	
 	public (Vector3 Position, Vector3 Rotation) GetBoneLocals(string BoneName)
 	{
 		Transform3D GlobalBoneTransform = Skeleton.GetBoneGlobalPose(Skeleton.FindBone(BoneName));

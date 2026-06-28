@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqu6yns4ryn6l"]
 
-[ext_resource type="Script" uid="uid://dehkerpmebuol" path="res://Scripts/CollapsableGroup.cs" id="1_qjs2t"]
-[ext_resource type="Script" uid="uid://bwrxbhisfnwge" path="res://Scripts/PhysicsCollapsable.cs" id="2_y8raf"]
+[ext_resource type="Script" uid="uid://dehkerpmebuol" path="res://Scripts/Destruction/CollapsableGroup.cs" id="1_qjs2t"]
+[ext_resource type="Script" uid="uid://bwrxbhisfnwge" path="res://Scripts/Destruction/PhysicsCollapsable.cs" id="2_y8raf"]
 [ext_resource type="Material" uid="uid://c8devu2tt17sb" path="res://Materials/WallBeams.tres" id="3_ff5dg"]
 [ext_resource type="ArrayMesh" uid="uid://dqyer132txlhy" path="res://Meshes/Destruction/WallBeamsSwitchHigh.res" id="3_l32aa"]
 

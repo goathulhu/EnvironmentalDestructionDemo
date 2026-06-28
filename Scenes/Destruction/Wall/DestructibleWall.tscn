@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://c4jxk1owsgcng" path="res://Materials/Wall.tres" id="1_icjv1"]
 [ext_resource type="ArrayMesh" uid="uid://bg2nhpoj4shwa" path="res://Meshes/Destruction/DestructableSurfaceWall.res" id="2_icjv1"]
-[ext_resource type="Script" uid="uid://b85tv4y4ukv0" path="res://Scripts/DestructibleWall.cs" id="3_xuixv"]
+[ext_resource type="Script" uid="uid://b85tv4y4ukv0" path="res://Scripts/Destruction/DestructibleWall.cs" id="3_xuixv"]
 [ext_resource type="Material" uid="uid://c8devu2tt17sb" path="res://Materials/WallBeams.tres" id="4_ep4fv"]
 [ext_resource type="PackedScene" uid="uid://blf5m3l7msge3" path="res://Scenes/Destruction/Wall/WallBeamsSwitchMid.tscn" id="4_n8uj4"]
 [ext_resource type="PackedScene" uid="uid://cqu6yns4ryn6l" path="res://Scenes/Destruction/Wall/WallBeamsSwitchHigh.tscn" id="4_u33hy"]
@@ -20,7 +20,7 @@ mesh = ExtResource("2_icjv1")
 script = ExtResource("3_xuixv")
 BeamsPlaceholderMesh = NodePath("../BeamsPlaceholderMesh")
 BeamSpots = [NodePath("../BeamSpot1"), NodePath("../BeamSpot2"), NodePath("../BeamSpot3"), NodePath("../BeamSpot4"), NodePath("../BeamSpot5")]
-BeamPrefabs = Array[PackedScene]([ExtResource("6_smfk1"), ExtResource("4_n8uj4"), ExtResource("4_u33hy")])
+BeamPrefabs = Array[PackedScene]([ExtResource("6_smfk1"), ExtResource("4_u33hy"), ExtResource("4_n8uj4")])
 DestScalMult = 1.5
 
 [node name="BeamsPlaceholderMesh" type="MeshInstance3D" parent="." unique_id=1164296413]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://48svv6dm735x"]
 
-[ext_resource type="Script" uid="uid://bwrxbhisfnwge" path="res://Scripts/PhysicsCollapsable.cs" id="1_jlbpn"]
+[ext_resource type="Script" uid="uid://bwrxbhisfnwge" path="res://Scripts/Destruction/PhysicsCollapsable.cs" id="1_jlbpn"]
 [ext_resource type="Material" uid="uid://c8devu2tt17sb" path="res://Materials/WallBeams.tres" id="2_2pqtm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2pqtm"]

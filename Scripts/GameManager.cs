@@ -58,7 +58,7 @@ public partial class GameManager : Node3D
 		NoiseWall.SetNoiseType(FastNoiseLite.NoiseTypeEnum.Simplex);
 		NoiseWall.SetFractalType(FastNoiseLite.FractalTypeEnum.None);
 		NoiseWall.SetSeed(696969);
-		NoiseWall.SetFrequency(0.1f);
+		NoiseWall.SetFrequency(1024f);
 
 		//var NewMap = DummyMap.Instantiate();
 		//AddChild(NewMap);
@@ -134,7 +134,12 @@ public partial class GameManager : Node3D
 	
 	public int SampleWallNoise(Vector3 Position)
 	{
-		return Mathf.FloorToInt(NoiseWall.GetNoise2D(Mathf.Round((Position.X + 0.4f) * 2.5f), Mathf.Round((Position.Z + 0.4f) * 2.5f)) * 1.5f + 1.5f);
+		//if ((Mathf.Round((Position.X + 0.4f) * 1.25f + 0.1f) + Mathf.Round((Position.Y + 0.4f) * 1.25f + 0.1f)) % 2 == 0) return 0;
+		//else return 1;
+		//return Mathf.FloorToInt(NoiseWall.GetNoise2D(Mathf.Round((Position.X + 0.4f) * 2.5f), Mathf.Round((Position.Z + 0.4f) * 2.5f)) * 1.5f + 1.5f);
+		//if (NoiseWall.GetNoise2D(Position.X, Position.Z) > 0f) return 0;
+		//else return 1;
+		return Mathf.FloorToInt(NoiseWall.GetNoise2D(Mathf.Round(Position.X * 8f), Mathf.Round(Position.Z * 8f)) * 1.5f + 1.5f);
 	}
 	
 	public float SampleRawWallNoise(Vector3 Position)

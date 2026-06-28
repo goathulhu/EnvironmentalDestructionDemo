@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cikpq66062g5a"]
 
-[ext_resource type="Script" uid="uid://dw1egr5ddn1r0" path="res://Scripts/Collapsable.cs" id="1_t30st"]
+[ext_resource type="Script" uid="uid://dw1egr5ddn1r0" path="res://Scripts/Destruction/Collapsable.cs" id="1_t30st"]
 [ext_resource type="Material" uid="uid://by4u5km16jo5m" path="res://Materials/FloorInside.tres" id="2_1jdcl"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5iukf"]

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bo6kflv3e4i45" path="res://Scripts/Hud.cs" id="4_3so38"]
 [ext_resource type="FontFile" uid="uid://mn2k1hm7pdr7" path="res://SourceCodePro-Bold.ttf" id="4_71axn"]
 [ext_resource type="Script" uid="uid://ei0siodgdv8v" path="res://Scripts/ProjectileManager.cs" id="4_fgofq"]
-[ext_resource type="Script" uid="uid://bdusgovkq7fel" path="res://Scripts/DestructionManager.cs" id="5_2irst"]
+[ext_resource type="Script" uid="uid://bdusgovkq7fel" path="res://Scripts/Destruction/DestructionManager.cs" id="5_2irst"]
 [ext_resource type="Script" uid="uid://brveo5geg5ii2" path="res://Scripts/Player.cs" id="5_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://co3bi2lwtmj1" path="res://Scenes/Projectile.tscn" id="8_3cx6b"]
 [ext_resource type="PackedScene" uid="uid://cu6qhyjnbaa04" path="res://Scenes/Destruction/DestructionBlob.tscn" id="8_4q8tf"]
@@ -15,8 +15,9 @@
 [ext_resource type="Script" uid="uid://vcun4valwhi4" path="res://Scripts/ViewmodelArms.cs" id="14_8r6kd"]
 [ext_resource type="Material" uid="uid://bshbrehgfeor0" path="res://Materials/Viewmodel.tres" id="15_8r6kd"]
 [ext_resource type="Script" uid="uid://bfrgmxfsdedhv" path="res://Scenes/test1.cs" id="16_8r6kd"]
-[ext_resource type="Script" uid="uid://i4a81sqa0hcl" path="res://Scripts/Ik.cs" id="16_rajel"]
+[ext_resource type="Script" uid="uid://i4a81sqa0hcl" path="res://Scripts/Misc/Ik.cs" id="16_rajel"]
 [ext_resource type="Script" uid="uid://1cyky122j1iv" path="res://Scripts/ViewmodelOverride.cs" id="16_tfod6"]
+[ext_resource type="Script" uid="uid://1igafr5b1o3v" path="res://Scripts/Item/DummyItem.cs" id="18_8r6kd"]
 [ext_resource type="PackedScene" uid="uid://cxj302nxplmnf" path="res://Scenes/DummyMap1.tscn" id="20_tfod6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_71axn"]
@@ -1957,6 +1958,7 @@ far = 256.0
 [node name="Director" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal/Camera/SpreadR" unique_id=960632119]
 
 [node name="Viewmodel" type="Node3D" parent="Player/PlayerView/CameraMotionGlobal/CamRotY/CamRotX/CameraMotionLocal" unique_id=2143233611 node_paths=PackedStringArray("ArmLeft", "ArmRight", "ShotgunOverride")]
+visible = false
 script = ExtResource("13_4q8tf")
 ArmLeft = NodePath("Arms/LeftArm")
 ArmRight = NodePath("Arms/RightArm")
@@ -3669,6 +3671,12 @@ text = "[color=666666]cooming in ur mom uwu"
 scroll_active = false
 scroll_following = true
 autowrap_mode = 0
+
+[node name="Items" type="Node3D" parent="Player" unique_id=1045973647]
+
+[node name="DummyItem" type="Node3D" parent="Player/Items" unique_id=1816560914]
+script = ExtResource("18_8r6kd")
+Id = "DummyItem"
 
 [node name="ParkourParent" type="Node3D" parent="Player" unique_id=1686287121]
 
